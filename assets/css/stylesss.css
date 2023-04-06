@@ -28,6 +28,13 @@ body::before {
   z-index: -1;
 }
 
+#age {
+  position: absolute;
+  top: 11%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;

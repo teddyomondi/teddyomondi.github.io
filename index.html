@@ -99,13 +99,16 @@
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 24</li>
-                <script>
-    var birthdate = new Date("1990-01-01"); // replace with your birthdate
+                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong></li>
+
+                <p id="age"></p>
+
+<script>
+    var birthdate = new Date("1997-08-07"); // replace with your birthdate
     var ageDifMs = Date.now() - birthdate.getTime();
     var ageDate = new Date(ageDifMs);
     var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-    document.getElementById("age").innerHTML = "I am " + age + " years old.";
+    document.getElementById("age").innerHTML =  + age ;
 </script>
                 <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> omosh60@gmail.com</li>
                 
