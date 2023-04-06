@@ -1,24 +1,4 @@
-:root{
-    --mount-meadow: #485707;
-    --white-smoke: #f0f0f0;
-    --night-rider: #343434;
-    --black: #191b17;
-    --transition: all 0.5s ease-in-out;
-}
-*{
-    font-family: 'Hind Siliguri', sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-html{
-    color: var(--black);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
-}
+
 
 /* setup & reusable stylings */
 img{
@@ -35,6 +15,7 @@ button{
     cursor: pointer;
     outline: 0;
     background: transparent;
+    text-align: ;
 }
 .container{
     max-width: 1320px;
