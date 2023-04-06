@@ -168,4 +168,10 @@
     items: 1
   });
 
+    var birthdate = new Date("1997-08-07"); // replace with your birthdate
+    var ageDifMs = Date.now() - birthdate.getTime();
+    var ageDate = new Date(ageDifMs);
+    var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+    document.getElementById("age").innerHTML =  + age ;
+
 })(jQuery);
