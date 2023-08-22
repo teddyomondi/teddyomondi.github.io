@@ -30,8 +30,9 @@ body::before {
 
 #age {
   position: absolute;
-  top: 11%;
-  left: 25%;
+ 
+ top: 19%;
+  left: 23%;
   transform: translate(-50%, -50%);
 }
 
