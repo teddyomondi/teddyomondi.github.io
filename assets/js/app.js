@@ -45,3 +45,5 @@ document.getElementById('maxdays').textContent = totalDays;
 // Initial call to start the update process
 updateProgressBar();
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+
+
