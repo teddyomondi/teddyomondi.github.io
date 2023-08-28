@@ -1089,6 +1089,7 @@ div.more {
 }
 
 .time {
+
   position: fixed;
   right: 0;
   font-weight: bold; /* Add font-weight property */
