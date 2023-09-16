@@ -1,9 +1,8 @@
-// your-script.js
 function updateCurrentTime() {
     const currentTimeElement = document.getElementById('current-time');
     const now = new Date();
     const timeString = now.toLocaleTimeString();
-    currentTimeElement.innerHTML = '<span class="current">Current time:</span> <span class="time">' + timeString + '</span>';
+    currentTimeElement.textContent = timeString;
 }
 
 setInterval(updateCurrentTime, 1000);

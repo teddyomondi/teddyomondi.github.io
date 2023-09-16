@@ -175,3 +175,20 @@
     document.getElementById("age").innerHTML =  + age ;
 
 })(jQuery);
+
+// JavaScript to open and close modals
+const modalBtns = document.querySelectorAll('.read-more-btn');
+const modals = document.querySelectorAll('.modal');
+
+modalBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    modals[index].style.display = 'block';
+  });
+});
+
+modals.forEach((modal) => {
+  const closeModalBtn = modal.querySelector('.close-modal');
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+});

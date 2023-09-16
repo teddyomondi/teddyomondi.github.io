@@ -32,7 +32,7 @@
   
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/stylesss.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,6 +50,8 @@
         <a href="https://www.facebook.com/teddy.omonditunya" class="facebook">        <i class="fa-brands fa-facebook"></i>
         </i></a>
         <a href="https://github.com/TeddyO323" class="github"><i class="fa-brands fa-github"></i>
+          <a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09"><i class="fa-brands fa-x-twitter fa-2xs"></i></a>
+
         </i></a>
         <a href="https://www.linkedin.com/in/teddy-omondi-35551376/" class="linkedin"><i class="icofont-linkedin"></i></a>
 
@@ -110,52 +112,14 @@
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong></li>
-
-                <p id="age"></p>
-
-
+                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong><p id="age" class="time"></p></li>
+                <!-- Move the closing </ul> tag here -->
                 <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> omosh60@gmail.com</li>
-                
-                
               </ul>
-<!---Progress bar--->
-              <div>
-                <canvas id="canvas"></canvas>
-                  </div>
-              <div class="container1">
-                <div id="info">
-                  <span id="days_percentage"></span> of <span id="year"></span>&nbsp;has passed
-                </div>
-                <br />
-                <div class="progress0"></div>
-                <div class="progress1" id="progress"></div>
-            
-                <!-- More Information -->
-                <h3 style="margin-top: -1em">More Information</h3>
-                <div class="more">
-                  <p class="mores">
-                  Total Days: <span class="spaninfo" id="days_total">0</span> /
-                    <span id="maxdays" class="spaninfo">0</span><br />
-                  </p>
-                
-                 
-                  <p class="mores">
-                  Date: <span class="spaninfo" id="servertime">0</span><br />
-                  </p>
-                  <p class="mores">
-                    Server Time 12H: <span class="spaninfo" id="servertime12H">0</span><br />
-                  </p>
-                  <p class="mores">
-                    Server Time 24H: <span class="spaninfo" id="servertime24H">0</span><br />
-                  </p>
-                </div>
-              </div>
-<!---end of progress bar---->
-            
-            
             </div>
           </div>
+          
+          
          
         </div>
       </div>
@@ -398,7 +362,9 @@
           <i class="bx bx-share-alt"></i>
           <h3>Social Profiles</h3>
           <div class="social-links">
-            <a href="https://www.facebook.com/teddy.omonditunya" class="facebook">        <i class="fa-brands fa-facebook"></i>
+            <a href="https://www.facebook.com/teddy.omonditunya" class="facebook"> <i class="fa-brands fa-facebook"></i>
+              <a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09"><i class="fa-brands fa-x-twitter fa-2xs"></i></a>
+
             </i></a>
             <a href="https://github.com/TeddyO323" class="github"><i class="fa-brands fa-github"></i>
             </i></a>
@@ -471,23 +437,335 @@
       </div>
     </section>
       <!-- projects section-->
-
       <section id="projects" class="projects">
         <div class="container">
-          <div class="blog">
-      
           <div class="section-title">
             <h2>Projects</h2>
-              <h1>This page is still under Construction</h1>
-              <p class = "animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p>
-      
-              <div class = "hero-btns animate__animated animate__fadeInUp animate__slow">
-                <a href = "index.html" ><button type = "button" class = "btn-trans">Go Back Home</button></a>
-               
+           
+          </div>
+          
+          <div class="project-cards">
+            <!-- Project Card 1 -->
+            
+            <div class="project-card">
+              <div class="project-image">
+
+              <h3>Year Progress bar</h3>
+
+                <img src="assets/img/project1.jpg"  alt="Project 1">
               </div>
+
+             
+              <button class="read-more-btn" data-modal="modal1">Read More</button>
+          </div>
+
+      
+            <!-- Project Card 2 (You can duplicate this for more projects) -->
+            <div class="project-card">
+              <h3>World Clock</h3>
+
+            <div class="project-image">
+                <img src="assets/img/world-clock.png" alt="Project 2">
+              </div>
+              
+              <button class="read-more-btn" data-modal="modal2">Read More</button>
             </div>
-          </section>
-            <!--end of projects-->
+
+            <div class="project-card">
+              <h3>World Clock in Python</h3>
+
+              <div class="project-image">
+                <img src="assets/img/clockk.png" alt="Project 2">
+              </div>
+              <button class="read-more-btn" data-modal="modal2">Read More</button>
+            </div>
+
+            <!-- <div class="project-card">
+              <div class="project-image">
+                <img src="project2.jpg" alt="Project 2">
+              </div>
+              <h3>Project 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <button class="read-more-btn" data-modal="modal2">Read More</button>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      
+      <!-- Modal Box 1 -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Project Name: Year Progress Bar</h3>
+          <p>
+            The Year Progress Bar with Feedback is a web-based application designed to provide users with a visual representation of the progress of the current year, along with the ability to provide feedback to the website owner. The project includes a progress bar that visually represents the percentage of the year that has passed, displays the current date and time, and allows users to submit feedback through a pop-up form. click <a href="https://github.com/TeddyO323/Progress-bar_of_the_year">here</a>
+          </p>
+      
+          <div class="section-title">Project Components:</div>
+          <ul>
+            <li>Progress Bar: ...</li>
+            <li>Date and Time Display: ...</li>
+            <!-- Include other components here -->
+          </ul>
+      
+          <div class="section-title">Project Technologies:</div>
+          <ul>
+            <li>HTML: Markup language for structuring the web page.</li>
+            <li>CSS: Cascading Style Sheets for styling the web page and elements.</li>
+            <!-- Include other technologies here -->
+          </ul>
+      
+          <div class="section-title">Project Goals:</div>
+          <p>
+            The Year Progress Bar project aims to provide an interactive and user-friendly experience while offering a creative way to visualize the passage of time and gather valuable user feedback.
+          </p>
+      
+          <div class="section-title project-author">
+            The project is created by [Your Name] and is attributed in the footer.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Box 2 (You can duplicate this for more modals) -->
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Project Name: Web Clock</h3>
+          <p>
+            Project Overview:<br>
+            The Web Clock is a feature-rich web application that serves as both a functional timekeeping tool and an aesthetically pleasing clock display. It offers users a range of features and customization options to enhance their timekeeping experience. The project aims to provide a versatile and interactive clock interface that goes beyond the basic time display.
+          </p>
+      
+          <div class="section-title">Key Features:</div>
+          <ul>
+            <li>Time Zone Selection: ...</li>
+            <li>Customizable Clock Hands: ...</li>
+            <!-- Include other key features here -->
+          </ul>
+      
+          <div class="section-title">Getting Started:</div>
+          <p>
+            Users can easily get started by opening the web page in their browser. The intuitive user interface and clear instructions make it accessible to users of all levels of technical proficiency.
+          </p>
+      
+          <div class="section-title project-author">
+            Designed by [Your Name].
+          </div>
+      
+          <div class="section-title project-footer">
+            The Web Clock project combines functionality, interactivity, and customization to provide users with a comprehensive timekeeping tool that can be tailored to their preferences. Whether users need to track time across different time zones, set alarms, or simply enjoy a visually appealing clock display, this project offers a versatile and engaging solution.
+          </div>
+        </div>
+      </div>
+
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Project Name: World Clock using Python</h3>
+          <p>
+            <strong>Description:</strong><br>
+            This Python code uses the tkinter library to create a graphical analog clock application that displays the current time and date on a canvas. The clock includes hour, minute, and second hands, as well as markings for each second and numeric hour labels.
+          </p>
+      
+          <div class="section-title">Define an `update_clock` function:</div>
+          <p>
+            <ul>
+            <li>This function is responsible for updating the clock hands, second markings, and date display on the canvas.</li>
+          </ul>
+          </p>
+
+          <div class="section-title">Import necessary libraries:</div>
+          <p>
+            <ul>
+            <li><b>`tkinter`</b> is imported as <b>`tk`</b> to create the graphical user interface.</li>
+           <li> <b>`math`</b> is imported for mathematical calculations involving angles.</li>
+            <li><b>`time`</b> is imported to retrieve the current time and date.</li>
+          </ul>
+          </p>
+
+          <div class="section-title">Get the current time and date:</div>
+          <p>
+            <ul>
+            <li>Using the <b>`time`</b> module, the code retrieves the current hour, minute, second, date, and day of the week.</li>
+          </ul>
+          </p>
+
+          <div class="section-title">Calculate angles for clock hands:</div>
+          <p>
+            <ul>
+            <li>The code calculates angles in radians for the hour, minute, and second hands based on the current time.
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title">Update the clock hands' positions:
+
+          </div>
+          <p>
+            <ul>
+             <li>It clears any previous clock hands by deleting objects with the tag "hands." </li>
+              <li>Then, it draws the hour, minute, and second hands with different lengths and colors on the canvas.</li>
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title"> Draw second markings:
+
+          </div>
+          <p>
+            <ul>
+             <li>The code draws markings for each second around the clock face. Longer markings are drawn for seconds divisible by 5 (every 5 seconds).
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title"> Calculate the position to display the date and day inside the circle:
+
+          </div>
+          <p>
+            <ul>
+             <li>It calculates the X and Y coordinates to display the date and day within the clock face while ensuring they fit inside the circle.
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title"> Draw the date and day inside the circle:
+
+          </div>
+          <p>
+            <ul>
+             <li>The code displays the formatted date and day of the week inside the clock face, adjusting the position to fit within the circle.
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title"> Schedule periodic updates:
+
+
+
+          </div>
+          <p>
+            <ul>
+             <li>The <b>`after`</b> method schedules the <b>`update_clock`</b> function to run again after 1000 milliseconds (1 second), creating a real-time clock effect.
+            </li>
+          </ul>
+          </p>
+         
+          <div class="section-title"> Create the main window:
+
+          </div>
+          <p>
+            <ul>
+             <li>The main application window is created using <b>`tk.Tk()`</b>, and its title is set to "Analog Clock."
+            </li>
+          </ul>
+          </p>
+
+          
+          <div class="section-title"> Calculate the center coordinates of the canvas:
+          </div>
+          <p>
+            <ul>
+             <li><b>`center_x`</b> and <b>`center_y`</b> define the center of the canvas, which is used as the reference point for drawing clock elements.
+
+            </li>
+          </ul>
+          </p>
+
+             
+          <div class="section-title"> Create a canvas for the clock face:
+            </div>
+          <p>
+            <ul>
+             <li>A canvas widget is created with a specified width, height, and background color ("lightgray"). This canvas will contain the clock elements.
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title">Load a background image (optional):
+          </div>
+          <p>
+            <ul>
+             <li>A background image can be loaded using <b>`tk.PhotoImage`</b>. This image can be displayed behind the clock hands and markings.
+            </li>
+          </ul>
+          </p>
+
+          <div class="section-title">Draw the clock face (circle):
+           </div>
+          <p>
+            <ul>
+             <li>A circular clock face is drawn on the canvas with a thicker border, defining the area where the clock elements will be placed.
+            </li>
+          </ul>
+          </p>
+         
+          <div class="section-title">Draw numeric hour labels:
+             </div>
+         <p>
+           <ul>
+            <li>Numeric hour labels are placed around the clock face using the <b>`create_text`</b> method.
+
+           </li>
+         </ul>
+         </p>
+
+         <div class="section-title">Create shadow effects for clock hands: </div>
+           <p>
+      <ul>
+       <li>Shadow effects are created for the hour, minute, and second hands using additional lines with a gray color.
+
+      </li>
+    </ul>
+    </p>
+
+    
+    <div class="section-title">Call the <b>`update_clock`</b> function: </div>
+
+
+      <p>
+ <ul>
+  <li>This starts the clock and begins updating the time and date.
+
+
+ </li>
+</ul>
+</p>
+
+<div class="section-title">Start the Tkinter main loop: </div>
+
+
+  <p>
+<ul>
+<li>The main application loop is started using <b>`root.mainloop()`</b>, which allows the GUI to respond to user interactions and update the clock.
+
+
+</li>
+</ul>
+</p>
+  
+        
+         
+         
+      
+          <!-- Include other sections in a similar structure -->
+      
+<div class="section-title">Note:</div>
+      <p>
+            You need to provide the path to a background image file ("background.png") in the background_image = tk.PhotoImage(file="") line if you want to use a custom background image.
+          </p>
+        </div>
+      </div>
+      
+      
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Project 2</h3>
+          <p>Detailed description of Project 2 goes here.</p>
+        </div>
+      </div>
+      
     <!---Portfolio section-->
     
     <section id="portfolio" class="portfolio">
@@ -513,10 +791,10 @@
 
     Designed by <a href="">Teddy Omondi</a>
   </div>
-
-  <div id="current-time"></div>
-
-
+  <div id="current-time-container">
+    <div class="current">Current time:</div>
+    <div id="current-time" class="time"></div>
+  </div>
 
 
 
