@@ -1172,6 +1172,14 @@ button{
   position: relative;
 }
 
+.close-container {
+  background-color: #f71010; /* Set the background color */
+  padding: 5px; /* Adjust padding as needed */
+  border-radius: 50%; /* Make the container round */
+  display: inline-block; /* Ensure that the container takes only the necessary width */
+}
+
+
 /* Style for the close button (X) */
 .close-modal {
   position: absolute;
