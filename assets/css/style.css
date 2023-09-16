@@ -1287,3 +1287,7 @@ button{
   background-color: initial; /* Set the card's background color back to its initial state */
 }
 
+.resume-item h4 {
+  color: #e48d2a;
+}
+
