@@ -12,14 +12,50 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
         }
         h1 {
-            color: #333;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            border-top: 8px solid #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <h1>Updates are coming!! Stay tuned</h1>
+    <div>
+        <h1>Updates are coming!!</h1>
+        <p>Stay tuned for something exciting!</p>
+        <div class="loader"></div>
+    </div>
 </body>
 </html>
