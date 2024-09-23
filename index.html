@@ -3,29 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Updates Coming Soon</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #282c34;
+            background: black;
             color: white;
-            text-align: center;
+            position: relative;
+            text-transform: uppercase;
         }
+
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Make sure the content is above the canvas */
+            text-align: center;
+            color: #00ff00;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.8)); /* Gradient background */
+            padding: 340px 320px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Transparent border */
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); /* Box shadow for depth */
+            max-width: 600px; /* Limit the width */
+            margin: 20px;
+        }
+
         h1 {
             font-size: 2.5em;
             animation: fadeIn 2s ease-in-out;
             margin-bottom: 20px;
         }
+
+  
+          @keyframes growText {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
         p {
             font-size: 1.2em;
             opacity: 0;
             animation: fadeIn 2s ease-in-out 1s forwards;
         }
+
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            border-top: 8px solid #00ff00;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #00ff00;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -36,41 +108,21 @@
                 transform: translateY(0);
             }
         }
-        .loader {
-            border: 8px solid rgba(255, 255, 255, 0.1);
-            border-top: 8px solid #fff;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.5em;
-            margin: 0 10px;
-            transition: transform 0.3s ease;
-        }
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-        .social-links i {
-            margin-right: 8px;
-        }
     </style>
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 <body>
-    <div>
-        <h1>Under construction!!</h1>
+    <meta name="description" content="Exciting updates are coming soon! Stay tuned for new features, and sign up to be notified when we launch.">
+<meta name="keywords" content="updates, coming soon, website launch, new features">
+<meta name="robots" content="index, follow">
+
+    <!-- Canvas for the background animation -->
+    <canvas id="matrix"></canvas>
+
+    <!-- Content overlay -->
+    <div class="content">
+        <h1>A new look is on its way!</h1>
         <p>Stay tuned for something exciting!</p>
         <div class="loader"></div>
         <div class="social-links">
@@ -88,5 +140,57 @@
             </a>
         </div>
     </div>
+    
+
+    <!-- JavaScript for the matrix effect -->
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas to full screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "1010101010101010";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        // Array to hold the Y position of the falling numbers for each column
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            // Set the background to a semi-transparent black to create the fading effect
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Set the text color to green
+            ctx.fillStyle = "#00ff00";
+            ctx.font = `${fontSize}px monospace`;
+
+            // Loop through each column and draw a random number at its Y position
+            drops.forEach((y, index) => {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                const x = index * fontSize;
+
+                ctx.fillText(text, x, y * fontSize);
+
+                // Reset drop back to the top after it goes off screen, with some randomness
+                if (y * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[index] = 0;
+                }
+
+                // Move the drop down the screen
+                drops[index]++;
+            });
+        }
+
+        setInterval(drawMatrix, 50);
+
+        // Adjust canvas size if the window is resized
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
