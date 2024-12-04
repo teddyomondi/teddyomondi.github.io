@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Updates Coming Soon</title>
     <style>
-      body, html {
+ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -27,27 +27,52 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2; /* Matrix is the background layer */
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Snow is above the matrix */
+    pointer-events: none; /* Make snow non-interactive */
 }
 
 .content {
     position: relative;
-    z-index: 1; /* Make sure the content is above the canvas */
+    z-index: 2; /* Content is above everything */
     text-align: center;
     color: #00ff00;
-    position: relative;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.8)); /* Gradient background */
-    padding: 340px 320px;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Transparent border */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); /* Box shadow for depth */
-    max-width: 600px; /* Limit the width */
-    margin: 20px;
+ 
+ 
 }
+
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url(assets/img/snow.png);
+    background-size: cover;
+    animation: animationSnow 4s ease-in-out infinite;
+    z-index: 1;
+    border-radius: 50%; /* Optional for circular flakes */
+}
+.snow:hover {
+    transform: scale(1.5); /* Enlarge on hover */
+    background-color: gold; /* Change to gold */
+}
+
 
 h1 {
     font-size: 2.5em;
     animation: fadeIn 2s ease-in-out;
     margin-bottom: 20px;
+    animation: sparkle 2s infinite;
+
 }
 
 @keyframes growText {
@@ -157,6 +182,28 @@ p {
     }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+body{
+    margin:0;
+}
+
+
+@keyframes animationSnow{
+    0%{
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(100px,50vh);
+    }
+}
+
+
+
     </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
@@ -168,6 +215,8 @@ p {
 
     <!-- Canvas for the background animation -->
     <canvas id="matrix"></canvas>
+    <div id="container"></div>
+
 
     <!-- Content overlay -->
     <div class="content">
@@ -192,7 +241,9 @@ p {
         </div>
     </div>
     
-
+        <div class="snow"></div>
+    </div>
+    
     <!-- JavaScript for the matrix effect -->
     <script>
         const canvas = document.getElementById('matrix');
@@ -242,6 +293,38 @@ p {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+        let container = document.getElementById('container');
+let count = 100; // Increase this number to add more flakes
+
+for (let i = 0; i < count; i++) {
+    let leftSnow = Math.floor(Math.random() * container.clientWidth);
+    let topSnow = Math.floor(Math.random() * container.clientHeight);
+    let widthSnow = Math.floor(Math.random() * 50);
+    let timeSnow = Math.floor((Math.random() * 5) + 5);
+    let blurSnow = Math.floor(Math.random() * 10);
+
+    // Create the snowflake element
+    let div = document.createElement('div');
+    div.classList.add('snow');
+
+    // Set random color
+    let colors = ['#ffffff', '#ff0000', '#00ff00', '#ffff00', '#00ffff'];
+    div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Set styles
+    div.style.left = leftSnow + 'px';
+    div.style.top = topSnow + 'px';
+    div.style.width = widthSnow + 'px';
+    div.style.height = widthSnow + 'px';
+    div.style.animationDuration = timeSnow + 's';
+    div.style.filter = "blur(" + blurSnow + "px)";
+
+    // Append to container
+    container.appendChild(div);
+}
+
+
+
     </script>
 </body>
 </html>
