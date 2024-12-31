@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.height = window.innerHeight;
 
     const spheres = [];
-    const numSpheres = 50; // Number of spheres
+    const numSpheres = 220; // Number of spheres
 
     // Create multiple spheres with different properties
     for (let i = 0; i < numSpheres; i++) {

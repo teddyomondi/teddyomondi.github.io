@@ -242,3 +242,19 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('DOM fully loaded and parsed');
 });
 
+function scrollLeft() {
+    document.querySelector('.project-cards').scrollBy({
+        left: -300, // Adjust scrolling distance
+        behavior: 'smooth'
+    });
+}
+
+function scrollRight() {
+    document.querySelector('.project-cards').scrollBy({
+        left: 300, // Adjust scrolling distance
+        behavior: 'smooth'
+    });
+}
+
+
+

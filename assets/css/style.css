@@ -15,6 +15,9 @@ body {
 	position: relative;
 	background: transparent;
 }
+
+
+
 body::before {
 	content: "";
 	position: fixed;
@@ -56,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
 	transition: ease-in-out 0.3s;
 	position: relative;
-	height: 100vh;
+	height: 90vh;
 	display: flex;
 	align-items: center;
 	z-index: 997;
@@ -72,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     line-height: 1;
     font-family: "Poppins", sans-serif;
-    color: #00f; /* Change text color to blue */
+    margin-bottom: 20px; /* Add space below H1 */
 
     text-shadow: 0 0 10px #00f, /* Blue glow */
                  0 0 20px #00f, /* Larger blue glow */
@@ -86,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 		text-transform: uppercase;
 		pointer-events: none;
-		font-size: 5vw;
+		font-size: 5.5vw;
 		letter-spacing: 2.6vw;
 		
 		/* text-shadow: 0px 6px 10px #3d5257; */
@@ -94,37 +97,59 @@ h1, h2, h3, h4, h5, h6 {
 		text-indent: 2.6vw;
 		opacity: 1;
 		font-weight: 100;
+
+
+		color: #3d5257;
+		color: hsla(192, 18%, 49%, 1);
+		/* text-shadow: 0px 6px 10px #3d5257; */
+		
+		top: 0;
+		left: -0.1ch;
+		transform: none;
+		
+		position: relative;
 		
 	
 }
 
 
+
 #header h1 a, #header h1 a:hover {
     color: #fff;
-    transform: translateY(-5px); /* Slight lift on hover */}
-	#header h2 {
-		font-family: "Poppins", sans-serif;
-		margin-top: 10px; /* Increase this value for more space */
-		text-transform: uppercase;
-		color: rgba(255, 255, 255, 0.8);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		text-align: center;
-		pointer-events: none;
-		font-size: 1vw;
-		letter-spacing: 1.55vw;
-		text-indent: 1.8vw;
-		padding: 0;
-		margin-bottom: 0; /* Ensure there's no bottom margin */
-	}
-	
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+#header h2 {
+    font-family: "Poppins", Arial, sans-serif;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Ensure items stay in a single row */
+    justify-content: center; /* Center align the items */
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    letter-spacing: 1.55vw; /* Default spacing for larger screens */
+    white-space: nowrap; /* Prevent text wrapping */
+    padding: 0;
+    margin: 0;
+
+    font-size: 1vw;
+    text-indent: 1.8vw;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: none;
+  
+    position: relative;
+}
+
+
+
 #header h2 span {
-	color: #fff;
-	border-bottom: 2px solid #00f;
-	padding-bottom: 6px;
+    color: #fff;
+    border-bottom: 2px solid #00f; /* Optional styling for the span */
+    padding-bottom: 6px;
 }
 
 #header .social-links {
@@ -148,22 +173,78 @@ h1, h2, h3, h4, h5, h6 {
 #header .social-links a:hover {
 	background: #00f;
 }
+/* Medium screens (tablets and smaller laptops, max-width: 992px) */
 @media (max-width: 992px) {
-	#header h1 {
-		font-size: 36px;
-	}
-	#header h2 {
-		font-size: 20px;
-		line-height: 30px;
-	}
-	#header .social-links {
-		margin-top: 15px;
-	}
-	#header .container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    #header h1 {
+        font-size: 25px; /* Smaller H1 */
+		margin-bottom: 15px; /* Adjust space below H1 */
+
+    }
+
+    #header h2 {
+        font-size: 16px; /* Smaller H2 */
+        line-height: 30px; /* Adjusted line height */
+        letter-spacing: 1ch; /* Maintain spacing */
+    }
+
+    #header .social-links {
+        margin-top: 15px; /* Adjusted margin */
+    }
+
+    #header .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+}
+
+/* Small screens (mobile phones, max-width: 768px) */
+@media (max-width: 768px) {
+    #header h1 {
+        font-size: 20px; /* Even smaller H1 */
+		margin-bottom: 10px; /* Reduced space below H1 */
+
+    }
+
+    #header h2 {
+        font-size: 14px; /* Smaller H2 */
+        line-height: 24px; /* Adjusted line height for small screens */
+        letter-spacing: 0.8ch; /* Tighter letter spacing */
+    }
+
+    #header .social-links {
+        margin-top: 10px; /* Reduced margin */
+    }
+
+    #header .container {
+        flex-direction: column; /* Keep vertical stacking */
+        align-items: center;
+    }
+}
+
+/* Extra-small screens (very small mobile phones, max-width: 480px) */
+@media (max-width: 480px) {
+    #header h1 {
+		margin-bottom: 10px; /* Reduced space below H1 */
+		font-size: 25px; /* Smallest H1 size */
+		letter-spacing: 2.6vw;
+
+
+    }
+
+    #header h2 {
+        font-size: 6px; /* Smallest H2 size */
+        line-height: 20px; /* Tighter line height */
+        letter-spacing: 2.1ch; /* Tighter letter spacing */
+    }
+
+    #header .social-links {
+        margin-top: 5px; /* Minimal margin */
+    }
+
+    #header .container {
+        flex-direction: column; /* Maintain vertical stacking */
+        align-items: center;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -399,11 +480,20 @@ section .container {
 .profile-photo {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Ensures the image takes full width of its column */
-    max-height: 350px; /* Prevents the image from being too large */
-    object-fit: cover; /* Maintains aspect ratio and fits in the container */
-    margin-bottom: 20px; /* Adds space below the image */
+    width: 100%; /* Ensures the image takes the full width of its column */
+    height: auto; /* Maintain aspect ratio */
+    max-height: none; /* Allow natural height */
+    object-fit: cover; /* Ensures image fills the container and avoids distortion */
+    margin-bottom: 20px; /* Adds spacing below the image */
 }
+
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 100%; /* Full width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
 
 /* About Section Title */
 .section-title p {
@@ -417,7 +507,7 @@ section .container {
 }
 .section-title h2 {
 	font-size: 28vh; /* Large font size for the background */
-    color: #fff; /* Light color for visibility */
+    color: #00f; /* Light color for visibility */
 	font-family: futura-pt;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -427,7 +517,31 @@ section .container {
     transform: translate(-50%, -50%); /* Adjust for exact centering */
     z-index: -5; /* Behind other content */
     pointer-events: none; /* Allow interaction with elements above */
+    
 }
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 80px; /* Adjust the size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 70px; /* Adjust the size for phones */
+    }
+}
+.quote-container {
+    position: relative; /* Position relative to its parent container */
+    margin-top: 50px; /* Adjust this to control vertical spacing */
+}
+
+blockquote {
+    bottom: -200px; /* Adjust this to move it lower */
+    font-style: italic;
+    color: #666;
+}
+
 
 /*--------------------------------------------------------------
 # Skills
@@ -437,6 +551,9 @@ section .container {
 	height: 50px;
 	display: block;
 	background: none;
+}
+.skills .section-title h1 {
+    text-transform: uppercase;
 }
 .skills .progress .skill {
 	padding: 14px 0;
@@ -896,52 +1013,144 @@ color: #00f;
     text-decoration: underline;
 }
 
+
+/* Starts here */
+
+
+
+
+/* Overlay (Project Name + Button) */
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1; /* Visible by default */
+}
+
+/* Hide Overlay on Hover */
+.project-card:hover .project-overlay h3 {
+    opacity: 0; /* Hide project name */
+}
+
+.project-card:hover .project-overlay .read-more-btn {
+    opacity: 1; /* Show "Read More" button */
+}
+
+/* Project Name */
+.project-overlay h3 {
+    margin: 0;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Read More Button */
+.project-overlay .read-more-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #00f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.project-overlay .read-more-btn:hover {
+    background: #0056b3;
+}
+
+
 /* Overall Styles for the Projects Section */
 .projects {
     padding: 60px 0;
     text-align: center;
+    overflow-x: hidden; /* Prevent horizontal overflow outside the container */
+	
 }
 
-/* Project Cards Layout */
+
+
+.projects h1 {
+	text-align: left;
+	text-overflow: ellipsis;
+	text-decoration: dotted;
+	text-transform: uppercase;
+	color: #00f;
+
+}
+
+/* Scrollbar styles for horizontal scrolling */
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling */
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Container for Project Cards */
 .project-cards {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 20px; /* Space between the cards */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px; /* Space around the scrolling area */
+    scroll-snap-type: x mandatory; /* Smooth snap behavior */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #00f transparent; /* Blue thumb, transparent track */
 }
 
+/* For WebKit browsers like Chrome, Safari */
+.project-cards::-webkit-scrollbar {
+    height: 10px; /* Horizontal scrollbar height */
+}
+
+.project-cards::-webkit-scrollbar-thumb {
+    background-color: #00f; /* Custom color for the scroll thumb */
+    border-radius: 1px;
+}
+
+.project-cards::-webkit-scrollbar-track {
+    background: #222; /* Custom color for the scrollbar track */
+}
+
+/* Scrollbar hover effect */
+.project-cards::-webkit-scrollbar-thumb:hover {
+    background-color: #008cff; /* Lighter blue on hover */
+}
+
+
 .project-card {
+    flex: 0 0 auto; /* Ensure each card retains its width */
     position: relative;
     border: 1px solid #ddd;
-    padding: 20px;
     text-align: center;
     width: 300px; /* Fixed width for all cards */
-    height: 450px; /* Increase height slightly to accommodate content */
+    height: 450px; /* Adjust height slightly to accommodate content */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensure content is spaced evenly */
-	box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-
-}
-
-/* Ensure the button is aligned at the bottom */
-.read-more-btn {
-    position: absolute;
-    bottom: -4px; /* Adjust the bottom margin to match card padding */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #050505;
-    color: #00f;
-    border: none;
-    border-color: #00f;
-    border-radius: 25px;
-    font-size: 16px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    scroll-snap-align: center; /* Snap each card to the center while scrolling */
+    border-radius: 20px; /* Optional: Rounded corners */
+    transition: transform 0.3s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 
 .project-card:hover {
     transform: scale(1.05);
@@ -969,14 +1178,82 @@ color: #00f;
     color: #ffffff;
     margin-bottom: 15px;
 }
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.left-btn {
+    left: 20px;
+}
+
+.right-btn {
+    right: 20px;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .scroll-btn {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
 
 
+.read-more-btn {
+    position: absolute;
+    bottom: -4px; /* Adjust the bottom margin to match card padding */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #050505;
+    color: #00f;
+    border: none;
+    border-color: #00f;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
 .read-more-btn:hover {
     background-color: #00f;
-	color: #fff;
+    color: #fff;
 }
 
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+    .project-card {
+        width: 250px; /* Smaller width for mobile */
+    }
+
+    .project-info h3 {
+        font-size: 18px; /* Adjust title size on smaller screens */
+    }
+
+    .project-info p {
+        font-size: 14px; /* Adjust paragraph size on smaller screens */
+    }
+
+    .read-more-btn {
+        font-size: 14px;
+    }
+}
 
 /* Modal Styles */
 .modal {
